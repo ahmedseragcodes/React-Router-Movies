@@ -8,9 +8,7 @@ export default function MovieCard(props) {
   const { title, director, metascore } = props.movie;
 
   return (
-    <div className="movie-card" onClick={
-      <Route path="/movies/{props.movie.id}" />
-    }>
+    <div className="movie-card">
     <h2>{title}</h2>
     <div className="movie-director">
       Director: <em>{director}</em>
