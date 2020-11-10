@@ -38,8 +38,15 @@ export default function App () {
     <div>
       <SavedList list={[ /* This is stretch */]} />
           <Router>
-      <Route exact path="/" component={MovieList} />
-      <Route path="/movies/:id" component={Movie} />
+      <Route exact path="/">
+      <MovieList movies={movieList} />
+      </Route>
+      <Route path="/movies/:id">
+      <Movie movie={movieList.map(function(item){
+        return item;
+      })}
+      />
+      </Route>
       </Router>
     </div>
   );
