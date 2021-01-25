@@ -5,13 +5,13 @@ import MovieCard from "./MovieCard";
 
 export default function Movie(props) {
   
-  const movies=props;
 
   const [movie, setMovie] = useState();
 
   
   const { url }=useRouteMatch();
   const { id } = useParams();
+
 
   // Change ^^^ that line and use a hook to obtain the :id parameter from the URL
 
@@ -41,7 +41,6 @@ export default function Movie(props) {
   const { title, director, metascore, stars } = movie;
 
   return (
-    <Router>
     <div className="save-wrapper">
       <div className="movie-card" >
         <h2>{title}</h2>
@@ -61,6 +60,5 @@ export default function Movie(props) {
       </div>
       <div className="save-button">Save</div>
     </div>
-    </Router>
   );
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import MovieCard from "./MovieCard";
 import { BrowserRouter as Router, Route, Link, Switch, useParams } from 'react-router-dom';
+import Movie from "./Movie";
 
 
 
@@ -25,10 +26,10 @@ function MovieDetails(props) {
   const { title, director, metascore, id } = props.movie;
 
   return (
-    <Router>
+    <div className="movie-card" >
       <Link to={`/movies/${id}`}>
-    <div className="movie-card" onClick={()=><Route path="/movies/{:id}" />}>
       <h2>{title}</h2>
+      </Link>
       <div className="movie-director">
         Director: <em>{director}</em>
       </div>
@@ -36,7 +37,5 @@ function MovieDetails(props) {
         Metascore: <strong>{metascore}</strong>
       </div>
     </div>
-      </Link>
-    </Router>
   );
 }
